@@ -14,17 +14,13 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 class CarMake(models.Model):
     name = models.CharField(max_length=255, unique=True)
     description = models.TextField(
-    help_text="Any useful information about maker"
-    )
+        help_text="Any useful information about maker")
     founded_year = models.IntegerField(
-    help_text="Year the company was founded"
-    )
+        help_text="Year the company was founded")
     headquarters = models.CharField(
-    max_length=255, help_text="Location of the company's headquarters"
-    )
+        max_length=255, help_text="Location of the company's headquarters")
     website = models.URLField(
-    max_length=200, blank=True, help_text="Company's official website"
-    )
+        max_length=200, blank=True, help_text="Company's official website")
 
 
     def __str__(self):
