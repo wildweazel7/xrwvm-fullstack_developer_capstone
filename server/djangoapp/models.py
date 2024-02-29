@@ -13,12 +13,12 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 # - __str__ method to print a car make object
 class CarMake(models.Model):
     name = models.CharField(max_length=255, unique=True)
-    description = models.TextField\
-    (help_text="Any useful information about maker")
-    founded_year = models.IntegerField\
-    (help_text="Year the company was founded")
-    headquarters = models.CharField\
-    (max_length=255, help_text="Location of the company's headquarters")
+    description = models.TextField(help_text=
+                                   "Any useful information about maker")
+    founded_year = models.IntegerField(help_text=
+                                       "Year the company was founded")
+    headquarters = models.CharField(max_length=255, 
+                                    help_text="Location of the company's headquarters")
     website = models.URLField(max_length=200, blank=True, 
                               help_text="Company's official website")
 
@@ -37,7 +37,7 @@ class CarMake(models.Model):
 # - __str__ method to print a car make object
 class CarModel(models.Model):
     mColorChoice = [
-        ('RED',"Red"), 
+        ('RED', "Red"), 
         ('Blue', "Blue"), 
         ('Black', "Black"), 
         ('White', "White"), 
@@ -45,13 +45,13 @@ class CarModel(models.Model):
         ('Yellow', "Yellow")
     ]
     mDoorChoice = [
-        ("Three","Three"), 
-        ("Five","Five")
+        ("Three", "Three"), 
+        ("Five", "Five")
     ]
     mExtraChoice = [
-        ("NONE","No Extra"),
-        ("SOUND","Sound system"), 
-        ("AIR","Air-cooling-system"), 
+        ("NONE", "No Extra"),
+        ("SOUND", "Sound system"), 
+        ("AIR", "Air-cooling-system"), 
         ("NAV", "Navigation system")
     ]
     mTypeCoice = [
