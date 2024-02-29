@@ -13,14 +13,14 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 # - __str__ method to print a car make object
 class CarMake(models.Model):
     name = models.CharField(max_length=255, unique=True)
-    description = models.TextField(
-        help_text="Any useful information about maker")
-    founded_year = models.IntegerField(
-        help_text="Year the company was founded")
-    headquarters = models.CharField(
-        max_length=255, help_text="Location of the company's headquarters")
-    website = models.URLField(
-        max_length=200, blank=True, help_text="Company's official website")
+    description = models.TextField\
+    (help_text="Any useful information about maker")
+    founded_year = models.IntegerField\
+    (help_text="Year the company was founded")
+    headquarters = models.CharField\
+    (max_length=255, help_text="Location of the company's headquarters")
+    website = models.URLField(max_length=200, blank=True, 
+                              help_text="Company's official website")
 
 
     def __str__(self):
@@ -72,9 +72,11 @@ class CarModel(models.Model):
     color = models.CharField\
     (max_length=255, choices=mColorChoice, help_text="Offered colors of the model")
     doors = models.CharField\
-    (max_length=255, choices=mDoorChoice, help_text="Number of doors possible", default="Five")
+    (max_length=255, choices=mDoorChoice, 
+     help_text="Number of doors possible", default="Five")
     extras = models.CharField\
-    (max_length=255, choices=mExtraChoice, help_text="List of extras",blank=True, default='NONE')
+    (max_length=255, choices=mExtraChoice, 
+     help_text="List of extras",blank=True, default='NONE')
     price = models.DecimalField\
     (max_digits=10, decimal_places=2, help_text="Price in USD",blank=True, default=10000)
     dealer_id = models.IntegerField(blank=True,null=True,default=1)
