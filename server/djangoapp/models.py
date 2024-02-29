@@ -61,14 +61,14 @@ class CarModel(models.Model):
     model_type = models.CharField(
         max_length=50, choices=mTypeCoice, default="SUV")
     year = models.IntegerField(
-        default=2023, 
+        default=2023,
         validators=[MaxValueValidator(2024), MinValueValidator(2015)]
     )
     car_make = models.ForeignKey(
         CarMake, on_delete=models.CASCADE, related_name="car_models"
     )
     color = models.CharField(
-        max_length=255, 
+        max_length=255,
         choices=mColorChoice, help_text="Offered colors of the model"
     )
     doors = models.CharField(
